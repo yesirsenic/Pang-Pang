@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
     [SerializeField]
-    private GameObject cane;
+    private GameObject ballCane;
 
     [SerializeField]
     private GameObject projectilePrefab;
@@ -18,13 +19,14 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ShootCoroutine());
     }
 
+    //임시이고 아마 뒤에 애니메이션 사용할 수 있음.
     IEnumerator ShootCoroutine()
     {
-        cane.SetActive(true);
+        ballCane.SetActive(true);
 
         yield return new WaitForSeconds(1f);
 
-        Vector3 spawnPos = cane.transform.GetChild(0).position;
+        Vector3 spawnPos = ballCane.transform.GetChild(0).position;
 
         // 발사체 소환
         GameObject projectile =
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        cane.SetActive(false);
+        ballCane.SetActive(false);
     }
 
 
