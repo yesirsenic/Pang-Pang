@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ce94dbac544c4c94baf18628d66fa72c
+guid: 0a16461e1bbeea444a1383c50ef53a53
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5349381885157787213
-    second: BOSSMonster_0
+      213: -1600124068171856294
+    second: Boss-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BOSSMonster_0
+      name: Boss-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 39
-        width: 513
-        height: 322
+        x: 31
+        y: 19
+        width: 438
+        height: 471
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b9b247848d23c5b0800000000000000
-      internalID: -5349381885157787213
+      spriteID: a56401843a73bc9e0800000000000000
+      internalID: -1600124068171856294
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BOSSMonster_0: -5349381885157787213
+      Boss-removebg-preview_0: -1600124068171856294
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -19,5 +19,15 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         rb.linearVelocity = rb.linearVelocity.normalized * speed;
+
+        if(collision.gameObject.tag == "Boss")
+        {
+            collision.gameObject.GetComponent<Boss>().OnHit();
+        }
+
+        if(collision.gameObject.tag == "Ground")
+        {
+            Destroy(gameObject);
+        }
     }
 }
