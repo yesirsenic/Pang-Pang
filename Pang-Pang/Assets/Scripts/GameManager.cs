@@ -4,6 +4,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+    public static GameManager Instance { get; private set; }
+
     [SerializeField]
     private GameObject ballCane;
 
@@ -12,6 +14,23 @@ public class GameManager : MonoBehaviour
 
     private float shootSpeed = 5f;
 
+
+    //projectile ฐüทร
+    public float maxSpeedRate = 10f;
+    public int maxDamageType = 4;
+
+    public Sprite[] BallSprites;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 
 
     private void Start()

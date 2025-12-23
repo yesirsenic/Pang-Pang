@@ -4,6 +4,8 @@ public class Projectile : MonoBehaviour
 {
     public float speed = 5f;
 
+    public int damageType = 1;
+
     private Rigidbody2D rb;
 
     private void Awake()
