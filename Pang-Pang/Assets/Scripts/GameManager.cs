@@ -10,16 +10,20 @@ public class GameManager : MonoBehaviour
     private GameObject ballCane;
 
     [SerializeField]
-    private GameObject projectilePrefab;
-
+    private GameObject ResumePopup;
+    
     private float shootSpeed = 5f;
-
+    private bool isFirst = true;
 
     //projectile ฐüทร
     public float maxSpeedRate = 10f;
     public int maxDamageType = 4;
+    public int score = 0;
+    public int ballCount = 1;
+    public bool IsPaused { get; private set; }
 
     public Sprite[] BallSprites;
+    public GameObject projectilePrefab;
 
     private void Awake()
     {
@@ -68,6 +72,26 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         ballCane.SetActive(false);
+    }
+
+    public void CheckGameOver()
+    {
+        if (ballCount > 0)
+            return;
+
+        IsPaused = true;
+
+        if (isFirst)
+        {
+            Time.timeScale = 0f;
+            ResumePopup.SetActive(true);
+            isFirst = false;
+        }
+
+        else
+        {
+
+        }
     }
 
 

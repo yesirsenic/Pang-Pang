@@ -18,10 +18,10 @@ public class DuplicateBall : Ball
 
             Vector2 dirCounter = RotateVector(-dirClockwise, angle);
 
-            SpawnBall(dirClockwise, speed, collision.gameObject);
-            SpawnBall(dirCounter, speed, collision.gameObject);
+            SpawnBall(dirClockwise, speed, GameManager.Instance.projectilePrefab); 
+            SpawnBall(dirCounter, speed, GameManager.Instance.projectilePrefab);
 
-
+            GameManager.Instance.ballCount += 2;
             Destroy(gameObject);
             
         }

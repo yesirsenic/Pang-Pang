@@ -31,6 +31,9 @@ public class CharacterMove : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.IsPaused)
+            return;
+
         float? screenX = null;
 
         if (Touchscreen.current != null &&
