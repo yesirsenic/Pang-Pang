@@ -11,7 +11,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject ResumePopup;
-    
+
+    [SerializeField]
+    private GameObject ResultPopup;
+
     private float shootSpeed = 5f;
     private bool isFirst = true;
 
@@ -90,8 +93,34 @@ public class GameManager : MonoBehaviour
 
         else
         {
-
+            Time.timeScale = 0f;
+            ResultPopup.SetActive(true);
         }
+    }
+
+    public void OnClickWatchAd()
+    {
+        AdsManager.Instance.ShowRewardedAd(
+        onCompleted: () =>
+        {
+            //광고 전부 시청시
+            ResumePopup.SetActive(false);
+            IsPaused = false;
+            Time.timeScale = 1f;
+            StartCoroutine(ShootCoroutine());
+        },
+        onFailed: () =>
+        {
+            ResumePopup.SetActive(false);
+            ResultPopup.SetActive(true);
+        }
+    );
+    }
+
+    public void NotWatchAd()
+    {
+        ResumePopup.SetActive(false);
+        ResultPopup.SetActive(true);
     }
 
 
