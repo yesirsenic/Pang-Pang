@@ -89,6 +89,14 @@ public class GameManager : MonoBehaviour
 
     private void OnResultPopup()
     {
+        DeathManager.Instance.DeathCount++;
+
+        if (DeathManager.Instance.DeathCount >=3)
+        {
+            AdsManager.Instance.ShowInterstitialAd();
+            DeathManager.Instance.DeathCount = 0;
+        }
+
         Time.timeScale = 0f;
         BestScoreSave();
         ResumePopup.SetActive(false);
@@ -153,7 +161,10 @@ public class GameManager : MonoBehaviour
         OnResultPopup();
     }
 
-    
+
+
+
+
 
 
 

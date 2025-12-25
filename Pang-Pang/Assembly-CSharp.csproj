@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\DamageUpBall.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\AdsManager.cs" />
+    <Compile Include="Assets\Scripts\DeathManager.cs" />
     <Compile Include="Assets\Scripts\DuplicateBall.cs" />
     <Compile Include="Assets\Scripts\ScoreNumberRenderer.cs" />
     <Compile Include="Assets\Scripts\Boss.cs" />
