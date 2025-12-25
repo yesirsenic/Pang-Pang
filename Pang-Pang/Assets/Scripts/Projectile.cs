@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private bool isEnd = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -46,7 +48,11 @@ public class Projectile : MonoBehaviour
 
         if (collision.gameObject.tag == "Ground")
         {
-            GameManager.Instance.ballCount--;
+            if(!isEnd)
+            {
+                GameManager.Instance.ballCount--;
+                isEnd = true;
+            }
             GameManager.Instance.CheckGameOver();
             Destroy(gameObject);
         }

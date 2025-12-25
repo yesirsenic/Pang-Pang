@@ -1,5 +1,8 @@
+using GoogleMobileAds.Ump.Api;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,8 +18,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject ResultPopup;
 
+    [SerializeField]
+    private GameObject scoreNumberRenderer_Score;
+
+    [SerializeField]
+    private GameObject scoreNumberRenderer_BestScore;
+
     private float shootSpeed = 5f;
     private bool isFirst = true;
+    private int bestScore = 0;
 
     //projectile ฐüทร
     public float maxSpeedRate = 10f;
@@ -77,6 +87,29 @@ public class GameManager : MonoBehaviour
         ballCane.SetActive(false);
     }
 
+    private void OnResultPopup()
+    {
+        Time.timeScale = 0f;
+        BestScoreSave();
+        ResumePopup.SetActive(false);
+        ResultPopup.SetActive(true);
+        scoreNumberRenderer_Score.GetComponent<ScoreNumberRenderer>().SetScore(score);
+        scoreNumberRenderer_BestScore.GetComponent<ScoreNumberRenderer>().SetScore(bestScore);
+
+    }
+
+    private void BestScoreSave()
+    {
+        int best = PlayerPrefs.GetInt("BestScore");
+
+        if(best < score)
+        {
+            PlayerPrefs.SetInt("BestScore", score);
+        }
+
+        bestScore = PlayerPrefs.GetInt("BestScore");
+    }
+
     public void CheckGameOver()
     {
         if (ballCount > 0)
@@ -93,8 +126,7 @@ public class GameManager : MonoBehaviour
 
         else
         {
-            Time.timeScale = 0f;
-            ResultPopup.SetActive(true);
+            OnResultPopup();
         }
     }
 
@@ -111,17 +143,19 @@ public class GameManager : MonoBehaviour
         },
         onFailed: () =>
         {
-            ResumePopup.SetActive(false);
-            ResultPopup.SetActive(true);
+            OnResultPopup();
         }
     );
     }
 
     public void NotWatchAd()
     {
-        ResumePopup.SetActive(false);
-        ResultPopup.SetActive(true);
+        OnResultPopup();
     }
+
+    
+
+
 
 
 }
