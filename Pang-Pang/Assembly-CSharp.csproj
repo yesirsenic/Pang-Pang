@@ -61,9 +61,13 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.2.3f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\SFXData.cs" />
+    <Compile Include="Assets\Scripts\AudioSliderUI.cs" />
     <Compile Include="Assets\Scripts\ScreenBoundsCollider2D.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\DamageUpBall.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
+    <Compile Include="Assets\Scripts\SFXTable.cs" />
     <Compile Include="Assets\Scripts\AdsManager.cs" />
     <Compile Include="Assets\Scripts\DeathManager.cs" />
     <Compile Include="Assets\Scripts\DuplicateBall.cs" />
@@ -71,6 +75,7 @@
     <Compile Include="Assets\Scripts\Boss.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\ItemSpawner.cs" />
+    <Compile Include="Assets\Scripts\ScenePlayBGM.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\SpeedUpBall.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />

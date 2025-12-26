@@ -8,6 +8,8 @@ public class SpeedUpBall : Ball
     {
         if (collision.gameObject.tag == "Projectile")
         {
+            AudioManager.Instance.PlaySFX("ItemSound");
+
             float speed = collision.gameObject.GetComponent<Projectile>().speed;
             if (speed < GameManager.Instance.maxSpeedRate)
             {

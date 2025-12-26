@@ -8,6 +8,8 @@ public class DuplicateBall : Ball
     {
         if (collision.gameObject.tag == "Projectile")
         {
+            AudioManager.Instance.PlaySFX("ItemSound");
+
             Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
 
             Vector2 originalVelocity = rb.linearVelocity;

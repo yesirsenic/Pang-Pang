@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+        AudioManager.Instance.PlaySFX("FireSpell");
+
         Vector3 spawnPos = ballCane.transform.GetChild(0).position;
 
         // 발사체 소환
@@ -97,6 +99,7 @@ public class GameManager : MonoBehaviour
             DeathManager.Instance.DeathCount = 0;
         }
 
+        AudioManager.Instance.PlaySFX("Result");
         Time.timeScale = 0f;
         BestScoreSave();
         ResumePopup.SetActive(false);

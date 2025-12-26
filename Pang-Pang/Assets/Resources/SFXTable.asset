@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a218a4c7eea3efb45a0624f64aa5ce29, type: 3}
+  m_Name: SFXTable
+  m_EditorClassIdentifier: Assembly-CSharp::SFXTable
+  sfxList:
+  - key: ButtonClick
+    clip: {fileID: 8300000, guid: 542518509416e964b9e50166dd4f0d0c, type: 3}
+  - key: ReBound
+    clip: {fileID: 8300000, guid: c65f96838d719c0499cf45c794e65b79, type: 3}
+  - key: ItemSound
+    clip: {fileID: 8300000, guid: c95d301d70223604096af95ab0249b8d, type: 3}
+  - key: BossDamage
+    clip: {fileID: 8300000, guid: fa08f520851a23b468ce8652a4273f48, type: 3}
+  - key: Result
+    clip: {fileID: 8300000, guid: 098793da370cf9c4e83ddda1c5a8596b, type: 3}
+  - key: FireSpell
+    clip: {fileID: 8300000, guid: b3e01bf340e83f149937fdcb2bd6e3ed, type: 3}
+  - key: WallBound
+    clip: {fileID: 8300000, guid: 3ef6c2830a632b6448f890f99761f57a, type: 3}

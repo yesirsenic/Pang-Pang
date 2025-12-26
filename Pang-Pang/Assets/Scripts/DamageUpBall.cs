@@ -8,6 +8,8 @@ public class DamageUpBall : Ball
     {
         if (collision.gameObject.tag == "Projectile")
         {
+            AudioManager.Instance.PlaySFX("ItemSound");
+
             if (collision.gameObject.GetComponent<Projectile>().damageType < GameManager.Instance.maxDamageType)
             {
                 collision.gameObject.GetComponent<Projectile>().damageType += damageUpRate;

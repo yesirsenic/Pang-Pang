@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -55,6 +56,16 @@ public class Projectile : MonoBehaviour
             }
             GameManager.Instance.CheckGameOver();
             Destroy(gameObject);
+        }
+
+        if(collision.gameObject.tag == "ReflectionBlock")
+        {
+            AudioManager.Instance.PlaySFX("ReBound");
+        }
+
+        if(collision.gameObject.tag =="Wall")
+        {
+            AudioManager.Instance.PlaySFX("WallBound");
         }
     }
 }

@@ -24,6 +24,7 @@ public class Boss : MonoBehaviour
         }
 
         hitCoroutine = StartCoroutine(HitRoutine());
+        AudioManager.Instance.PlaySFX("BossDamage");
     }
 
     IEnumerator HitRoutine()

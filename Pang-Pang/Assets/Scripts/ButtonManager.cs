@@ -24,4 +24,9 @@ public class ButtonManager : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void ButtonSoundOn()
+    {
+        AudioManager.Instance.PlaySFX("ButtonClick");
+    }
 }

@@ -57,6 +57,7 @@ public class ScreenBoundsCollider2D : MonoBehaviour
         GameObject wall = new GameObject(name);
         wall.transform.parent = transform;
         wall.transform.position = position;
+        wall.tag = "Wall";
 
         BoxCollider2D col = wall.AddComponent<BoxCollider2D>();
         col.size = size;
