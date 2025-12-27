@@ -13,16 +13,21 @@ public class CharacterMove : MonoBehaviour
     private float maxX;
     private Collider2D col;
 
+    private float targetX;
+    private bool hasInput;
+
+    private Rigidbody2D rb;
+
     private void Start()
     {
         cam = Camera.main;
         col = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
 
         Vector2 left = cam.ViewportToWorldPoint(new Vector2(0, 0));
         Vector2 right = cam.ViewportToWorldPoint(new Vector2(1, 0));
 
         float halfWidth = col.bounds.extents.x;
-
         minX = left.x + halfWidth;
         maxX = right.x - halfWidth;
 
@@ -43,31 +48,31 @@ public class CharacterMove : MonoBehaviour
         }
 
 #if UNITY_EDITOR
-        // 마우스 디버깅용
         if (Mouse.current != null && Mouse.current.leftButton.isPressed)
         {
             screenX = Mouse.current.position.ReadValue().x;
         }
 #endif
 
-        if(screenX.HasValue)
+        if (screenX.HasValue)
         {
-            Move(screenX.Value);
+            float depth = cam.WorldToScreenPoint(transform.position).z;
+            Vector3 world = cam.ScreenToWorldPoint(new Vector3(screenX.Value, 0, depth));
+            targetX = Mathf.Clamp(world.x, minX, maxX);
+            hasInput = true;
         }
     }
 
-    void Move(float screenX)
+    private void FixedUpdate()
     {
-        float depth = cam.WorldToScreenPoint(transform.position).z;
-        Vector3 world = cam.ScreenToWorldPoint(new Vector3(screenX, 0, depth));
-
-        float clampedX = Mathf.Clamp(world.x, minX, maxX);
-        transform.position = new Vector3(clampedX, fixedY, transform.position.z);
+        if (!hasInput) return;
 
         if(PlayerPrefs.GetInt("TutorialShown") == 0)
         {
             GameManager.Instance.TutorialOffAndPlay();
         }
+
+        rb.MovePosition(new Vector2(targetX, fixedY));
     }
 
 

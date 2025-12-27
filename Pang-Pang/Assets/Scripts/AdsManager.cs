@@ -8,6 +8,10 @@ public class AdsManager : MonoBehaviour
 {
     public static AdsManager Instance;
 
+    private Action onRewardCompleted;
+    private Action onRewardFailed;
+    private bool rewardGranted;
+
 #if UNITY_ANDROID
     private string rewardedAdUnitId = "ca-app-pub-3940256099942544/5224354917";
     private string interstitialAdUnitId = "ca-app-pub-3940256099942544/1033173712";
@@ -30,11 +34,14 @@ public class AdsManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
         else
         {
             Destroy(gameObject);
             return;
         }
+
+        MobileAds.RaiseAdEventsOnUnityMainThread = true;
     }
 
     private void Start()
@@ -60,23 +67,49 @@ public class AdsManager : MonoBehaviour
             }
 
             rewardedAd = ad;
+
+            rewardedAd.OnAdFullScreenContentClosed += () =>
+            {
+                if (!rewardGranted)
+                    onRewardFailed?.Invoke();
+
+                ResetRewardState();
+                LoadRewardedAd();
+            };
+
+            rewardedAd.OnAdFullScreenContentFailed += error =>
+            {
+                onRewardFailed?.Invoke();
+                ResetRewardState();
+                LoadRewardedAd();
+            };
         });
     }
 
-    public void ShowRewardedAd(Action onCompleted, Action onFailed = null)
+    public void ShowRewardedAd(Action onCompleted, Action onFailed)
     {
-        if (rewardedAd != null && rewardedAd.CanShowAd())
-        {
-            rewardedAd.Show(reward =>
-            {
-                onCompleted?.Invoke();
-                LoadRewardedAd(); // 다음 광고 미리 로드
-            });
-        }
-        else
+        if (rewardedAd == null || !rewardedAd.CanShowAd())
         {
             onFailed?.Invoke();
+            return;
         }
+
+        onRewardCompleted = onCompleted;
+        onRewardFailed = onFailed;
+        rewardGranted = false;
+
+        rewardedAd.Show(reward =>
+        {
+            rewardGranted = true;
+            onRewardCompleted?.Invoke();   // ⭐ 여기서 즉시 Resume
+        });
+    }
+
+    private void ResetRewardState()
+    {
+        rewardGranted = false;
+        onRewardCompleted = null;
+        onRewardFailed = null;
     }
 
     // =========================

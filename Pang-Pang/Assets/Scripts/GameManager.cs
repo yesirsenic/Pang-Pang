@@ -159,12 +159,13 @@ public class GameManager : MonoBehaviour
             IsPaused = false;
             Time.timeScale = 1f;
             StartCoroutine(ShootCoroutine());
+            ballCount = 1;
         },
         onFailed: () =>
         {
             OnResultPopup();
         }
-    );
+        );
     }
 
     public void NotWatchAd()

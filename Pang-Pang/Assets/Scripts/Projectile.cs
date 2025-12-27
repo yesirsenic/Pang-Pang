@@ -16,27 +16,24 @@ public class Projectile : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
-    {
-        rb.linearVelocity = rb.linearVelocity.normalized * rb.linearVelocity.magnitude;
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2 dir = rb.linearVelocity.normalized;
+        Vector2 v = rb.linearVelocity.normalized;
 
-        if (Mathf.Abs(dir.y) > 0.95f)
+        const float minComponent = 0.25f;
+
+        if (Mathf.Abs(v.x) < minComponent)
         {
-            dir.x = Random.Range(-0.3f, 0.3f);
+            v.x = Mathf.Sign(v.x == 0 ? Random.Range(-1f, 1f) : v.x) * minComponent;
         }
 
-        if (Mathf.Abs(dir.x) > 0.95f)
+        if (Mathf.Abs(v.y) < minComponent)
         {
-            dir.y = Random.Range(0.3f, 0.6f);
+            v.y = Mathf.Sign(v.y == 0 ? 1f : v.y) * minComponent;
         }
 
-        dir.Normalize();
-        rb.linearVelocity = dir * speed;
+        v.Normalize();
+        rb.linearVelocity = v * speed;
 
         if (collision.gameObject.tag == "Boss")
         {

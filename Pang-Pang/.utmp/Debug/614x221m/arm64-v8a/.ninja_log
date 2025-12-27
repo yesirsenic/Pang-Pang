@@ -1,0 +1,12 @@
+# ninja log v5
+74	350	7885268490407423	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	736eadc9c3bb4269
+351	839	7885268493884187	D:/Github/Pang-Pang/Pang-Pang/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/614x221m/obj/arm64-v8a/libswappywrapper.so	cc12e656098c6c03
+15	1901	7885268505813572	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	854f2db2387639f2
+9	1909	7885268505868682	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	df628aa9623b8bac
+38	1928	7885268506024031	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	3becd9ea3e61da16
+50	2040	7885268507253826	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	67abfeafe5a6172
+21	2050	7885268507340086	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	45015e4823be04b6
+31	2082	7885268507666597	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	2708f2cf640206f8
+1	2122	7885268508039666	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	59d41d5ae96861f9
+58	2149	7885268508353869	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	55ed143622571045
+2149	2264	7885268509497092	D:/Github/Pang-Pang/Pang-Pang/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/614x221m/obj/arm64-v8a/libgame.so	4f98c169c07c11b5
