@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject scoreNumberRenderer_BestScore;
 
+    [SerializeField]
+    private GameObject tutorial;
+
     private float shootSpeed = 5f;
     private bool isFirst = true;
     private int bestScore = 0;
@@ -52,10 +55,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if(PlayerPrefs.GetInt("TutorialShown") == 0)
+        {
+            tutorial.SetActive(true);
+            return;
+        }
+
         StartCoroutine(ShootCoroutine());
     }
 
-    //임시이고 아마 뒤에 애니메이션 사용할 수 있음.
     IEnumerator ShootCoroutine()
     {
         ballCane.SetActive(true);
@@ -162,6 +170,16 @@ public class GameManager : MonoBehaviour
     public void NotWatchAd()
     {
         OnResultPopup();
+    }
+
+    public void TutorialOffAndPlay()
+    {
+        PlayerPrefs.SetInt("TutorialShown", 1);
+        PlayerPrefs.Save();
+
+        tutorial.SetActive(false);
+
+        StartCoroutine(ShootCoroutine());
     }
 
 

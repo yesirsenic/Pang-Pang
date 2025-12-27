@@ -63,6 +63,11 @@ public class CharacterMove : MonoBehaviour
 
         float clampedX = Mathf.Clamp(world.x, minX, maxX);
         transform.position = new Vector3(clampedX, fixedY, transform.position.z);
+
+        if(PlayerPrefs.GetInt("TutorialShown") == 0)
+        {
+            GameManager.Instance.TutorialOffAndPlay();
+        }
     }
 
 
