@@ -67,9 +67,9 @@
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\LevelPlayManifestProcessor.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Service\NetworkingService\Retry\RetryPolicy.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Service\NetworkingService\Serialization\IDeserializable.cs" />
-    <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Service\NetworkingService\Response\HttpResponseException.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Service\NetworkingService\Requests\Request.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Service\LevelPlayLogger.cs" />
+    <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Service\NetworkingService\Response\HttpResponseException.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Settings\LevelPlayMediationNetworkSettingsInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\PostBuild\LevelPlayBuildPostprocessor.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Service\LevelPlayGameServiceEnabler.cs" />
@@ -151,8 +151,8 @@
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Settings\LevelPlaySettingsHelper.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Versioning\UnityPackage.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Service\NetworkingService\Serialization\ISerializable.cs" />
-    <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\IosAdsSupport\Source\SkAdNetworkRemoteSource.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Versioning\AdapterIosVersion.cs" />
+    <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\IosAdsSupport\Source\SkAdNetworkRemoteSource.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Versioning\LevelPlayNetworkManager.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Settings\Views\PackageManagementSettingsView.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.levelplay@2d2a5e1fe9e9\Editor\Service\IPackageTypeService.cs" />
@@ -779,6 +779,10 @@
       <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.Unity.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@74deb55db2a0\Runtime\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>Library\PackageCache\com.unity.visualscripting@6279e2b7c485\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
       <Private>False</Private>
@@ -789,10 +793,6 @@
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>Library\PackageCache\com.unity.collections@d49facba0036\Unity.Collections.Tests\System.Runtime.CompilerServices.Unsafe\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@74deb55db2a0\Runtime\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">

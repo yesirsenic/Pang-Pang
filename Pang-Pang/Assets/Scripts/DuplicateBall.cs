@@ -23,7 +23,6 @@ public class DuplicateBall : Ball
             SpawnBall(dirClockwise, speed, GameManager.Instance.projectilePrefab); 
             SpawnBall(dirCounter, speed, GameManager.Instance.projectilePrefab);
 
-            GameManager.Instance.ballCount += 2;
             Destroy(gameObject);
             
         }
@@ -34,6 +33,8 @@ public class DuplicateBall : Ball
         GameObject newBall = Instantiate(ball, transform.position, Quaternion.identity);
         Rigidbody2D rb = newBall.GetComponent<Rigidbody2D>();
         rb.linearVelocity = dir * speed;
+
+        newBall.transform.SetParent(GameManager.Instance.projectileCollection.transform);
     }
 
     Vector2 RotateVector(Vector2 v, float degrees)

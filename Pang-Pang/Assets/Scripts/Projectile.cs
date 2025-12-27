@@ -48,11 +48,11 @@ public class Projectile : MonoBehaviour
         {
             if(!isEnd)
             {
-                GameManager.Instance.ballCount--;
                 isEnd = true;
             }
-            GameManager.Instance.CheckGameOver();
             Destroy(gameObject);
+            GameManager.Instance.OnCheckGameOver();
+            
         }
 
         if(collision.gameObject.tag == "ReflectionBlock")

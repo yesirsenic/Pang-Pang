@@ -35,11 +35,11 @@ public class GameManager : MonoBehaviour
     public float maxSpeedRate = 10f;
     public int maxDamageType = 4;
     public int score = 0;
-    public int ballCount = 1;
     public bool IsPaused { get; private set; }
 
     public Sprite[] BallSprites;
     public GameObject projectilePrefab;
+    public GameObject projectileCollection;
 
     private void Awake()
     {
@@ -50,16 +50,23 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
+
+        projectileCollection = new GameObject("ProjectileCollection");
     }
 
 
     private void Start()
     {
-        if(PlayerPrefs.GetInt("TutorialShown") == 0)
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+
+        if (PlayerPrefs.GetInt("TutorialShown") == 0)
         {
             tutorial.SetActive(true);
             return;
         }
+
+
 
         StartCoroutine(ShootCoroutine());
     }
@@ -79,6 +86,8 @@ public class GameManager : MonoBehaviour
             Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
 
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+
+        projectile.transform.SetParent(projectileCollection.transform);
 
         // 각도 랜덤 선택
         float[] angles = { 210f, 225f, 240f };
@@ -129,10 +138,18 @@ public class GameManager : MonoBehaviour
         bestScore = PlayerPrefs.GetInt("BestScore");
     }
 
+    IEnumerator CheckGameOverFlow()
+    {
+        yield return null;
+
+        if(projectileCollection.transform.childCount == 0)
+        {
+            CheckGameOver();
+        }
+    }
+
     public void CheckGameOver()
     {
-        if (ballCount > 0)
-            return;
 
         IsPaused = true;
 
@@ -159,7 +176,6 @@ public class GameManager : MonoBehaviour
             IsPaused = false;
             Time.timeScale = 1f;
             StartCoroutine(ShootCoroutine());
-            ballCount = 1;
         },
         onFailed: () =>
         {
@@ -181,6 +197,11 @@ public class GameManager : MonoBehaviour
         tutorial.SetActive(false);
 
         StartCoroutine(ShootCoroutine());
+    }
+
+    public void OnCheckGameOver()
+    {
+        StartCoroutine(CheckGameOverFlow());
     }
 
 
