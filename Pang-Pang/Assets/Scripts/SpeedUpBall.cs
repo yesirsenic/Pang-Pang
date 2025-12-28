@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpeedUpBall : Ball
 {
-    public float speedUprate = 1f;
+    public float speedUprate = 5f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

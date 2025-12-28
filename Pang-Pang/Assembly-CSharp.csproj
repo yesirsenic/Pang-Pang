@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\AudioSliderUI.cs" />
     <Compile Include="Assets\Scripts\ScreenBoundsCollider2D.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\ScreenBoundary.cs" />
     <Compile Include="Assets\Scripts\DamageUpBall.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\SFXTable.cs" />

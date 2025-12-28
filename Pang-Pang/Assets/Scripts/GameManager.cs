@@ -32,9 +32,15 @@ public class GameManager : MonoBehaviour
     private int bestScore = 0;
 
     //projectile 관련
-    public float maxSpeedRate = 10f;
+    public float maxSpeedRate = 100f;
+    public float maxNormalSpeedRate = 80f;
     public int maxDamageType = 4;
     public int score = 0;
+    public int timer = 0;
+
+    //ball 관련
+    public float spawnAndDestroyRate = 4f;
+    public float minSpawnAndDestroyRate = 2f;
     public bool IsPaused { get; private set; }
 
     public Sprite[] BallSprites;
@@ -69,6 +75,8 @@ public class GameManager : MonoBehaviour
 
 
         StartCoroutine(ShootCoroutine());
+
+        StartCoroutine(CountEverySecond());
     }
 
     IEnumerator ShootCoroutine()
@@ -104,6 +112,22 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         ballCane.SetActive(false);
+    }
+
+    IEnumerator CountEverySecond()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            timer++;
+
+            spawnAndDestroyRate -= 0.05f * timer;
+
+            if(spawnAndDestroyRate < minSpawnAndDestroyRate)
+            {
+                spawnAndDestroyRate = minSpawnAndDestroyRate;
+            }
+        }
     }
 
     private void OnResultPopup()

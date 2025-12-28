@@ -1100,15 +1100,19 @@ MonoBehaviour:
   scoreNumberRenderer_BestScore: {fileID: 1045197722}
   tutorial: {fileID: 1309708612}
   maxSpeedRate: 10
+  maxNormalSpeedRate: 30
   maxDamageType: 4
   score: 0
-  ballCount: 1
+  timer: 0
+  spawnAndDestroyRate: 3
+  minSpawnAndDestroyRate: 1.5
   BallSprites:
   - {fileID: -8262534425414574923, guid: a0293e7860407404d9f4dbb83d4bb1c9, type: 3}
   - {fileID: 4317225593958605249, guid: a7caaa2ee1c4b2241a2f5b0385eda9cd, type: 3}
   - {fileID: -7411300847944884930, guid: 9666af1a62f59c8459bdee903b6889fe, type: 3}
   - {fileID: -106413003905911418, guid: 5f2d32e5fdb133343af8285eb5029f3d, type: 3}
   projectilePrefab: {fileID: 2433927947240188806, guid: 136f8832155e96445b1500106e676641, type: 3}
+  projectileCollection: {fileID: 0}
 --- !u!4 &610408531
 Transform:
   m_ObjectHideFlags: 0
@@ -1478,6 +1482,51 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763823361}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &862865293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 862865296}
+  - component: {fileID: 862865295}
+  m_Layer: 0
+  m_Name: WorldBoundary
+  m_TagString: WorldBoundary
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &862865295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862865293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32e3887463c5094d827d621e15f61e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenBoundary
+  margin: 2
+--- !u!4 &862865296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862865293}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -3486,3 +3535,4 @@ SceneRoots:
   - {fileID: 637160677}
   - {fileID: 2021742868}
   - {fileID: 1480792417}
+  - {fileID: 862865296}

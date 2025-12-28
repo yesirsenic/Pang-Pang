@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+
     private void Start()
     {
         StartCoroutine(DestroyCorutine());
@@ -10,7 +11,7 @@ public class Ball : MonoBehaviour
 
     IEnumerator DestroyCorutine()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(GameManager.Instance.spawnAndDestroyRate);
 
         Destroy(gameObject);
     }

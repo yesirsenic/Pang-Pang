@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - ReflectionBlock
   - Wall
+  - WorldBoundary
   layers:
   - Default
   - TransparentFX

@@ -22,7 +22,7 @@ public class ItemSpawner : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(GameManager.Instance.spawnAndDestroyRate);
             SpawnItem();
         }
     }
