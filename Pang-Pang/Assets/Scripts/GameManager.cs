@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
     {
         DeathManager.Instance.DeathCount++;
 
-        if (DeathManager.Instance.DeathCount >=3)
+        if (DeathManager.Instance.DeathCount >=2)
         {
             AdsManager.Instance.ShowInterstitialAd();
             DeathManager.Instance.DeathCount = 0;
