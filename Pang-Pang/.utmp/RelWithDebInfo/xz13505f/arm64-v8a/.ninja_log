@@ -1,0 +1,23 @@
+# ninja log v5
+69	419	7913211349252967	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c8d1de15fba27f9
+10	2691	7913211371970913	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	65b260f8a7ba7175
+27	2377	7913211368832898	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	afe0599d40555584
+43	2347	7913211368525520	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	ddbb390542cfe422
+420	830	7913211352668308	D:/Github/Pang-Pang/Pang-Pang/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/xz13505f/obj/arm64-v8a/libswappywrapper.so	53f5297cf591f22c
+60	2386	7913211368903024	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	de2748937b219cfe
+1	2082	7913211365786861	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	9c94bb93ae3e937a
+19	2318	7913211367603979	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	13ec875ce00e1230
+51	2337	7913211367719691	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	17ac4f5c1750239b
+34	2693	7913211371970913	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c784f9b519d1c435
+2693	2859	7913211373666082	D:/Github/Pang-Pang/Pang-Pang/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/xz13505f/obj/arm64-v8a/libgame.so	64e535a6bf548dbf
+43	222	7924948669934499	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c8d1de15fba27f9
+222	554	7924948672700860	D:/Github/Pang-Pang/Pang-Pang/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/xz13505f/obj/arm64-v8a/libswappywrapper.so	53f5297cf591f22c
+11	1788	7924948685455543	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	13ec875ce00e1230
+32	1796	7924948685576134	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	17ac4f5c1750239b
+18	1806	7924948685717130	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	9c94bb93ae3e937a
+26	1867	7924948686264728	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	ddbb390542cfe422
+14	1877	7924948686411366	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	afe0599d40555584
+38	1908	7924948686729549	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	de2748937b219cfe
+22	2131	7924948688934696	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c784f9b519d1c435
+7	2219	7924948689796226	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	65b260f8a7ba7175
+2219	2416	7924948691824041	D:/Github/Pang-Pang/Pang-Pang/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/xz13505f/obj/arm64-v8a/libgame.so	64e535a6bf548dbf
