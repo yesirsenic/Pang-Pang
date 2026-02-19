@@ -37,8 +37,12 @@ public class AdsManager : MonoBehaviour
             return;
         }
 
+#if !UNITY_WEBGL
+
         MobileAds.RaiseAdEventsOnUnityMainThread = true;
         InitializeAds();
+
+#endif
     }
 
     #endregion

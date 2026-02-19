@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "415018149237",
+    "project_id": "pang-pang-40568",
+    "storage_bucket": "pang-pang-40568.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415018149237:android:5479bb28cd289b751f5f3c",
+        "android_client_info": {
+          "package_name": "com.senicgames.pangpang"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeMKnnhBYiQbU8IBhnxr5KMKzb0jrOHGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

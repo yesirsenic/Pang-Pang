@@ -54,6 +54,13 @@ public class CharacterMove : MonoBehaviour
         }
 #endif
 
+#if UNITY_WEBGL
+        if (Mouse.current != null && Mouse.current.leftButton.isPressed)
+        {
+            screenX = Mouse.current.position.ReadValue().x;
+        }
+#endif
+
         if (screenX.HasValue)
         {
             float depth = cam.WorldToScreenPoint(transform.position).z;
