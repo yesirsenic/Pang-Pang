@@ -132,17 +132,13 @@ public class GameManager : MonoBehaviour
 
     private void OnResultPopup()
     {
-
-#if !UNITY_WEBGL
         DeathManager.Instance.DeathCount++;
 
-        if (DeathManager.Instance.DeathCount >= 2)
+        if (DeathManager.Instance.DeathCount >=2)
         {
             AdsManager.Instance.ShowInterstitialAd();
             DeathManager.Instance.DeathCount = 0;
-        }   
-#endif
-
+        }
 
         AudioManager.Instance.PlaySFX("Result");
         Time.timeScale = 0f;
@@ -180,11 +176,6 @@ public class GameManager : MonoBehaviour
     {
 
         IsPaused = true;
-
-#if UNITY_WEBGL
-        isFirst = false;
-#endif
-
 
         if (isFirst)
         {
